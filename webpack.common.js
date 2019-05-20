@@ -75,13 +75,7 @@ module.exports = {
       inject: false,
       appMountId: "root",
       template: HtmlWebpackTemplate,
-      title: "React Hooked On A Feeling",
-      meta: [
-        {
-          name: "viewport",
-          content: "width=device-width, user-scalable=no"
-        }
-      ]
+      title: "React Hooked On A Feeling"
     }),
     new CopyPlugin([{ from: "static" }])
   ]

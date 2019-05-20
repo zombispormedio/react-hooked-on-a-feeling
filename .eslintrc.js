@@ -21,7 +21,8 @@ module.exports = {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["!src/**/*.js"]}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["!src/**/*.js"]}],
+    "global-require": "off"
     
   },
 }

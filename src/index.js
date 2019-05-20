@@ -1,22 +1,32 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
-import { Deck, Slide, Heading, Text, Notes } from "spectacle";
-import { CountDown } from "./components";
+import Redbox from "redbox-react";
+import { AppContainer } from "react-hot-loader";
 
-const Presentation = () => (
-  <Deck transition={["zoom", "slide"]} transitionDuration={500}>
-    <Slide transition={["zoom"]}>
-      <Heading>React Hooked On A Feeling</Heading>
-      <Text>Welcome</Text>
-      <Notes>Notes</Notes>
-    </Slide>
-    <Slide transition={["zoom"]}>
-      <Heading>CountDown</Heading>
-      <Text>
-        <CountDown />
-      </Text>
-    </Slide>
-  </Deck>
+import Presentation from "./presentation";
+
+const CustomErrorReporter = ({ error }) => <Redbox error={error} />;
+
+CustomErrorReporter.propTypes = {
+  error: PropTypes.instanceOf(Error).isRequired
+};
+
+ReactDOM.render(
+  <AppContainer errorReporter={CustomErrorReporter}>
+    <Presentation />
+  </AppContainer>,
+  document.getElementById("root")
 );
 
-ReactDOM.render(<Presentation />, document.getElementById("root"));
+if (module.hot) {
+  module.hot.accept("./presentation", () => {
+    const NextPresentation = require("./presentation").default;
+    ReactDOM.render(
+      <AppContainer errorReporter={CustomErrorReporter}>
+        <NextPresentation />
+      </AppContainer>,
+      document.getElementById("root")
+    );
+  });
+}
