@@ -11,9 +11,6 @@ const plugins = [
 
 module.exports = api => {
   api.cache(true);
-  if (process.env.NODE_ENV !== "development") {
-    plugins.push("transform-react-remove-prop-types");
-  }
   return {
     presets,
     plugins

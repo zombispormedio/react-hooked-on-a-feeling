@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 
 const calculateCountdown = countDownTime => {
   const now = new Date().getTime();
@@ -28,44 +28,46 @@ const calculateCountdown = countDownTime => {
   };
 };
 
-const useCountDown = countDownDate => {
-  const [expired, setExpired] = useState(false);
+export const useCountDown = countDownDate => {
+  const intervalId = useRef(null);
   const countDownTime = useMemo(() => new Date(countDownDate).getTime(), [
     countDownDate
   ]);
-  const [timeCalculations, setTimeCalculations] = useState(() => {
-    const { values } = calculateCountdown(countDownTime);
-    return values;
-  });
+  const [{ expired, values }, setResult] = useState(() =>
+    calculateCountdown(countDownTime)
+  );
+
+  const cancel = useCallback(() => clearInterval(intervalId.current), [
+    intervalId
+  ]);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const { expired: isExpiredNow, values } = calculateCountdown(
-        countDownTime
-      );
+    if (expired) return undefined;
+    intervalId.current = setInterval(() => {
+      const newResult = calculateCountdown(countDownTime);
 
-      if (isExpiredNow) {
-        setExpired(isExpiredNow);
-        clearInterval(intervalId);
+      if (newResult.expired) {
+        clearInterval(intervalId.current);
       }
 
-      setTimeCalculations(values);
+      setResult(newResult);
     }, 1000);
 
     return () => {
-      clearInterval(intervalId);
+      clearInterval(intervalId.current);
     };
   }, []);
 
   return {
-    ...timeCalculations,
-    expired
+    ...values,
+    expired,
+    cancel
   };
 };
 
-export const CountDown = () => {
+/* export const CountDown = () => {
   const { expired, days, hours, minutes, seconds } = useCountDown(
     "2019-06-11 19:00"
   );
   return expired ? "Expired" : `${days}d ${hours}h ${minutes}m ${seconds}s`;
-};
+}; */

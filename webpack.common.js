@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackTemplate = require("html-webpack-template");
@@ -77,6 +78,9 @@ module.exports = {
       template: HtmlWebpackTemplate,
       title: "React Hooked On A Feeling"
     }),
-    new CopyPlugin([{ from: "static" }])
+    new CopyPlugin([{ from: "static" }]),
+    new webpack.DefinePlugin({
+      "process.env.TALK_AT": JSON.stringify(process.env.TALK_AT)
+    })
   ]
 };
