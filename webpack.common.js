@@ -78,9 +78,6 @@ module.exports = {
       template: HtmlWebpackTemplate,
       title: "React Hooked On A Feeling"
     }),
-    new CopyPlugin([{ from: "static" }]),
-    new webpack.DefinePlugin({
-      "process.env.TALK_AT": JSON.stringify(process.env.TALK_AT)
-    })
+    new CopyPlugin([{ from: "static" }])
   ]
 };
