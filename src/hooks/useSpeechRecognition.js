@@ -7,24 +7,24 @@ export const useSpeechRecognition = ({ lang }) => {
   const [transcript, setTranscript] = useState();
   const [recognizing, setRecognizing] = useState(false);
   const [error, setError] = useState();
-  const recognitionRef = useRef(new window.SpeechRecognition());
+  const recognitionRef = useRef();
 
   const talk = useCallback(() => {
     recognitionRef.current.start();
   }, [recognitionRef]);
 
   useEffect(() => {
-    const recognition = recognitionRef.current;
+    const recognition = new window.SpeechRecognition();
     recognition.lang = lang;
     recognition.onresult = event => {
       const last = event.results.length - 1;
       setTranscript(event.results[last][0].transcript);
     };
     recognition.onerror = event => setError(event);
-
     recognition.onstart = () => setRecognizing(true);
     recognition.onend = () => setRecognizing(false);
     recognition.onspeechend = () => recognition.stop();
+    recognitionRef.current = recognition;
   }, []);
 
   return {

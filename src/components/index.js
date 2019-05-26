@@ -1,2 +1,3 @@
 export * from "./CountDown";
-export * from "./SpeechPlayground";
+export * from "./Speech";
+export * from "./Painter";
