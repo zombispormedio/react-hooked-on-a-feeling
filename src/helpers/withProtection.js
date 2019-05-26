@@ -28,8 +28,7 @@ export const withProtection = ({ skip, options }) => TargetComponent => {
       <TargetComponent {...props} />
     );
   };
-  ProtectedTargetComponent.displayName = `withProtection(${
-    TargetComponent.displayName
-  })`;
+  ProtectedTargetComponent.displayName = `withProtection(${TargetComponent.displayName ||
+    TargetComponent.name})`;
   return ProtectedTargetComponent;
 };

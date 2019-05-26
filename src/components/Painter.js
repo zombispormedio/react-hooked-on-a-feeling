@@ -1,4 +1,10 @@
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useCallback
+} from "react";
+import { useActivity } from "../hooks";
 
 const Painter = forwardRef((props, ref) => {
   const canvasRef = useRef();
@@ -66,6 +72,9 @@ const Painter = forwardRef((props, ref) => {
 
 export const PainterPlayground = () => {
   const painterRef = useRef();
+  const { notify } = useActivity();
+
+  const notifyDrawing = useCallback(item => notify(`Drawing ${item}`), []);
   return (
     <div>
       <Painter
@@ -78,6 +87,7 @@ export const PainterPlayground = () => {
         type="button"
         onClick={() => {
           painterRef.current.drawCircle();
+          notifyDrawing("Circle");
         }}
       >
         Circle
@@ -86,6 +96,7 @@ export const PainterPlayground = () => {
         type="button"
         onClick={() => {
           painterRef.current.drawSquare();
+          notifyDrawing("Square");
         }}
       >
         Square
@@ -95,6 +106,7 @@ export const PainterPlayground = () => {
         type="button"
         onClick={() => {
           painterRef.current.drawTriangle();
+          notifyDrawing("Triangle");
         }}
       >
         Triangle
@@ -104,6 +116,7 @@ export const PainterPlayground = () => {
         type="button"
         onClick={() => {
           painterRef.current.drawLine();
+          notifyDrawing("Line");
         }}
       >
         Line
@@ -114,6 +127,7 @@ export const PainterPlayground = () => {
           painterRef.current.drawImageFromUrl(
             "https://vignette.wikia.nocookie.net/digimon/images/0/02/Kabuterimon.gif/revision/latest?cb=20091231004037&path-prefix=es"
           );
+          notifyDrawing("Kabuterimon");
         }}
       >
         Kabuterimon
@@ -122,6 +136,7 @@ export const PainterPlayground = () => {
         type="button"
         onClick={() => {
           painterRef.current.clean();
+          notify("Cleaning canvas");
         }}
       >
         Clean

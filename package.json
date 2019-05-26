@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Xavier Serrano <zombispormedio007@gmail.com>",
   "dependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
+    "date-fns": "^2.0.0-alpha.27",
     "dotenv": "^8.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
