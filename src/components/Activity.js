@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { formatDistance } from "date-fns";
 import { useActivity } from "../hooks";
@@ -14,14 +14,6 @@ const ActivityList = styled.ul`
 
 export const ActivityPlayground = () => {
   const { activity } = useActivity();
-  useEffect(() => {
-    let mount = true;
-
-    setTimeout(() => console.log(mount), 10000);
-    return () => {
-      mount = false;
-    };
-  }, []);
   return (
     <ActivityList>
       {activity.map(({ at, message }) => (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -15,10 +15,12 @@ const CountDownContainer = styled.div`
   font-family: Open Sans Condensed;
 `;
 
-export const CountDown = ({ days, hours, minutes, seconds }) => (
-  <CountDownContainer>
-    {days}d {hours}h {minutes}m {seconds}s
-  </CountDownContainer>
+export const CountDown = forwardRef(
+  ({ days, hours, minutes, seconds }, ref) => (
+    <CountDownContainer ref={ref}>
+      {days}d {hours}h {minutes}m {seconds}s
+    </CountDownContainer>
+  )
 );
 
 CountDown.propTypes = {

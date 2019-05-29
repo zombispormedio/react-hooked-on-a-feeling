@@ -58,9 +58,9 @@ const Presentation = () => {
 };
 
 export default withProtection({
-  skip: process.env.NODE_ENV === "development",
+  // skip: process.env.NODE_ENV === "development",
   options: {
-    deadline: "2019-06-11 19:00",
+    deadline: "2019-06-13 19:00",
     password: [86, 73, 82, 85, 83]
   }
 })(withActivity(Presentation));
