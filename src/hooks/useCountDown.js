@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
 const calculateCountdown = countDownTime => {
   const now = new Date().getTime();
@@ -37,9 +37,7 @@ export const useCountDown = countDownDate => {
     calculateCountdown(countDownTime)
   );
 
-  const cancel = useCallback(() => clearInterval(intervalId.current), [
-    intervalId
-  ]);
+  const cancel = () => clearInterval(intervalId.current);
 
   useEffect(() => {
     if (expired) return undefined;
