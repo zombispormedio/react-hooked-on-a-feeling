@@ -10,8 +10,7 @@ import {
   Quote,
   BlockQuote,
   Cite,
-  Notes,
-  Magic
+  Notes
 } from "spectacle";
 import createTheme from "spectacle/lib/themes/default";
 import styled from "styled-components";
@@ -61,13 +60,15 @@ const Presentation = () => {
           <Text textColor="secondary">By Xavier Serrano</Text>
           <Image src={alicanteFrontendLogo} width="5rem" margin="2rem auto" />
         </Slide>
-        <Slide transition={["fade"]} bgColor="white" progressColor="primary">
+        <Slide transition={["fade"]}>
           <Image
             src={authorImage}
             width="15rem"
             style={{ borderRadius: "10rem" }}
           />
-          <Text margin="2rem auto auto auto">Xavier Serrano</Text>
+          <Text margin="2rem auto auto auto" textColor="white">
+            Xavier Serrano
+          </Text>
           <Row>
             <Image
               src={twitterLogo}
@@ -79,11 +80,16 @@ const Presentation = () => {
               textSize="x-large"
               margin="auto 0 auto 0"
               href="https://twitter.com/zombispormedio"
+              textColor="white"
             >
               @Zombispormedio
             </Link>
           </Row>
-          <Text textSize="xx-large" margin="2rem auto auto auto">
+          <Text
+            textSize="xx-large"
+            margin="2rem auto auto auto"
+            textColor="white"
+          >
             Full Stack Engineer en
           </Text>
           <Image src={companyImage} width="12rem" />
@@ -115,11 +121,19 @@ const Presentation = () => {
             señaló a un enorme JSON y dijo “Esto es un Bulbasaur”.
           </Notes>
         </Slide>
-        <Slide bgColor="white" progressColor="primary">
-          <Text textSize="x-large">Me recordaréis de...</Text>
+        <Slide>
+          <Text textSize="x-large" textColor="white">
+            Me recordaréis de...
+          </Text>
           <BlockQuote>
-            <Quote textSize="3rem">Hijo de !@#$% !</Quote>
-            <Cite textColor="black">Evento del GDG Alicante</Cite>
+            <Quote
+              textSize="3rem"
+              textColor="secondary"
+              style={{ borderLeft: `1px solid ${colors.secondary}` }}
+            >
+              Hijo de !@#$% !
+            </Quote>
+            <Cite>Evento del GDG Alicante</Cite>
           </BlockQuote>
           <Image src={googleVoiceKit} width="25rem" />
           <Image src={gdgAlicanteLogo} width="20rem" />
@@ -129,35 +143,31 @@ const Presentation = () => {
             GDG.
           </Notes>
         </Slide>
-        <Magic>
-          <Slide>
-            <Heading>Aviso</Heading>
-            <Text textColor="secondary" textSize="1.7rem">
-              La siquiente charla puede contener referencias a drogas, chistes
-              demasiado malos, referencias demasiado millenials, spoilers a
-              Juego de Tronos, desvaríos, injurias a Vue.js y código que puede
-              producir
-              <i> Grumpy Reactions</i> <sup>*</sup>. Se recomienda permanezcan
-              sentados. Y ante todo eviten levantarse, taparse los oídos y
-              gritar. Si son obsesos de las clases y sienten molestias,
-              angustia, mareos o diarrea. El baño está a la derecha. El ponente
-              no se responsabiliza de que el contenido clave de la charla pueda
-              producir adicción, paranoia, hipnosis o migraciones de código
-              inminente.
-            </Text>
+        <Slide>
+          <Heading>Aviso</Heading>
+          <Text textColor="secondary" textSize="1.7rem">
+            La siquiente charla puede contener referencias a drogas, chistes
+            demasiado malos, referencias demasiado millenials, spoilers a Juego
+            de Tronos, desvaríos, injurias a Vue.js y código que puede producir
+            <i> Grumpy Reactions</i> <sup>*</sup>. Se recomienda permanezcan
+            sentados. Y ante todo eviten levantarse, taparse los oídos y gritar.
+            Si son obsesos de las clases y sienten molestias, angustia, mareos o
+            diarrea. El baño está a la derecha. El ponente no se responsabiliza
+            de que el contenido clave de la charla pueda producir adicción,
+            paranoia, hipnosis o migraciones de código inminente.
+          </Text>
 
-            <Text
-              textColor="secondary"
-              textSize="1.2rem"
-              margin="5rem auto auto auto"
-            >
-              <sup>*</sup>
-              <i>Grumpy Reaction</i>, acuñado por el equipo de React, se define
-              como la sensación producida en algunos desarrolladores debido al
-              visionado de determinados React Hooks.
-            </Text>
-          </Slide>
-        </Magic>
+          <Text
+            textColor="secondary"
+            textSize="1.5rem"
+            margin="5rem auto auto auto"
+          >
+            <sup>*</sup>
+            <i>Grumpy Reaction</i>, acuñado por el equipo de React, se define
+            como la sensación producida en algunos desarrolladores debido al
+            visionado de determinados React Hooks.
+          </Text>
+        </Slide>
       </Deck>
     </BaseStyles>
   );
