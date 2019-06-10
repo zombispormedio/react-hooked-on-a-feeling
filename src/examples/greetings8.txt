@@ -1,0 +1,75 @@
+class Greetings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      quote: "",
+      searchResult: [],
+      windowWidth: window.innerWidth
+    };
+    this.onChange = this.onChange.bind(this);
+    this.updateWidth = this.updateWidth.bind(this);
+  }
+
+  updateWidth() {
+    this.setState({
+      windowWidth: window.innerWidth
+    });
+  }
+
+  componentDidMount() {
+    fetch("https://api.chucknorris.io/jokes/random")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          quote: res.value
+        });
+      });
+    window.addEventListener("resize", this.updateWidth);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.name !== this.state.name) {
+      fetch(`
+        https://api.chucknorris.io/jokes/search?query=${this.state.name}
+        `)
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            searchResult: res.result.map(
+              item => item.value
+              )
+          });
+        });
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWidth);
+  }
+
+  onChange(evt) {
+    this.setState({
+      name: evt.target.value
+    });
+  }
+  render() {
+    return (
+      <div>
+        <div>Window width: {this.state.windowWidth}</div>
+        <h1>Hello, {this.state.name}</h1>
+        <input type="text" 
+          onChange={this.onChange} 
+          value={this.state.name} />
+        <div style={{ marginTop: "2rem" }}>
+          {this.state.quote}
+        </div>
+        <ul>
+          {this.state.searchResult.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+}

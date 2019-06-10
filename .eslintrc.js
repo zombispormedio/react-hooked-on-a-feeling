@@ -23,7 +23,9 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["!src/**/*.js"]}],
     "global-require": "off",
-    "react/no-array-index-key": "off"
-    
+    "react/no-array-index-key": "off",
+    "react/no-multi-comp": "off",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off"
   },
 }

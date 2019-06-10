@@ -1,0 +1,79 @@
+function useFormValue(initial) {
+  const [value, setValue] = useState(initial);
+  const onChange = evt => {
+    setValue(evt.target.value);
+  };
+  return {
+    value,
+    onChange
+  };
+}
+
+function useRandomJoke() {
+  const [joke, setJoke] = useState();
+  useEffect(() => {
+    let isCancelled = false;
+    fetch("https://api.chucknorris.io/jokes/random")
+      .then(res => res.json())
+      .then(res => !isCancelled && setJoke(res.value));
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+  return joke;
+}
+
+function useSearchJokes(query) {
+  const [searchResult, setSearchResult] = useState([]);
+  useEffect(() => {
+    if (query === "") return;
+    let isCancelled = false;
+    fetch(`https://api.chucknorris.io/jokes/search?query=${query}`)
+      .then(res => res.json())
+      .then(
+        res =>
+          !isCancelled &&
+          setSearchResult((res.result || []).map(item => item.value))
+      );
+    return () => {
+      isCancelled = true;
+    };
+  }, [query]);
+
+  return searchResult;
+}
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function updateWidth() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", updateWidth);
+    return () => {
+      window.addEventListener("resize", updateWidth);
+    };
+  }, []);
+
+  return width;
+}
+
+function Greetings() {
+  const { value, onChange } = useFormValue("");
+  const joke = useRandomJoke();
+  const searchResult = useSearchJokes(value);
+  const width = useWindowWidth();
+  return (
+    <div>
+      <div>Window width: {width}</div>
+      <h1>Hello, {value}</h1>
+      <input type="text" onChange={onChange} value={value} />
+      <div style={{ marginTop: "2rem" }}>{joke}</div>
+      <ul>
+        {searchResult.map(item => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}

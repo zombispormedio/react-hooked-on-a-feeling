@@ -1,0 +1,18 @@
+<?php
+$post =
+  <div class="post">
+    <h2>{$post}</h2>
+    <p><span>Hey there.</span></p>
+    <a href={$like_link}>Like</a>
+  </div>;
+
+  <?php
+class :fb:thing extends :x:element {
+  attribute
+    string title = "No Title",
+    enum { "cool", "lame" } type;
+
+	protected function render() {
+    return <div class="thing">thing</div>;
+  }
+}

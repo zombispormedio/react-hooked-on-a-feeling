@@ -1,0 +1,15 @@
+function Greetings(props) {
+  return (
+    <div>
+      <h1>Hello, {props.name}</h1>
+      {props.children}
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <Greetings name="Alicante Frontend">
+    <h2>Un placer conocerlos</h2>
+  </Greetings>,
+  document.getElementById("root")
+);

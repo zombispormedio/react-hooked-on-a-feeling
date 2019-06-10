@@ -11,10 +11,13 @@
     "date-fns": "^2.0.0-alpha.27",
     "dotenv": "^8.0.0",
     "prop-types": "^15.7.2",
+    "raw-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-twitter-embed": "^2.0.8",
     "spectacle": "^5.5.0",
+    "spectacle-code-slide": "^0.5.2",
+    "spectacle-image-slide": "^1.0.1",
     "styled-components": "^4.3.1"
   },
   "devDependencies": {
