@@ -9,7 +9,7 @@ function Greetings(props) {
 
 ReactDOM.render(
   <Greetings name="Alicante Frontend">
-    <h2>Un placer conocerlos</h2>
+    <h2>¿Cómo vais?</h2>
   </Greetings>,
   document.getElementById("root")
 );
