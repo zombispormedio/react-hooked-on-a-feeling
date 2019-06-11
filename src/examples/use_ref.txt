@@ -1,0 +1,10 @@
+const ref = useRef(false);
+
+ useEffect(() => {
+		if(ref.current){
+			console.log("This is componentDidUpdate")
+		}else{
+			console.log("This is componentDidMount");
+			ref.current = true;
+		} 
+ });

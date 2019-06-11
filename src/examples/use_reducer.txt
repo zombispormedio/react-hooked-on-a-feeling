@@ -1,0 +1,21 @@
+function reducer(menu, action) {
+	switch(action.type){
+		case 'SERVE_DRINK': 
+			return {
+				...menu,
+				drinks: [...menu.drinks, action.item]
+			};
+		case 'SERVE_FOOD': 
+			return {
+				...menu,
+				food: [...menu.food, action.item]
+			};
+		default: 
+			return menu;
+	}
+}
+
+const [ menu, dispatch ] = useReducer(reducer, { drinks: [], food: []  })
+
+dispatch({ type: 'SERVE_DRINK', item: "☕" })
+dispatch({ type: 'SERVE_FOOD', item: "🥞" })

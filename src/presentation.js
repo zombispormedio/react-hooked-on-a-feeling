@@ -1,7 +1,17 @@
 import React from "react";
 import { BaseStyles } from "@primer/components";
-import { Deck, Slide, Text, Heading, Image } from "spectacle";
-import { alicanteFrontendLogo } from "./images";
+import {
+  Deck,
+  Slide,
+  Text,
+  Heading,
+  Image,
+  List,
+  ListItem,
+  Appear,
+  Notes
+} from "spectacle";
+import { alicanteFrontendLogo, rules } from "./images";
 import { withProtection } from "./helpers";
 import { withActivity } from "./hooks";
 import { theme } from "./theme";
@@ -64,8 +74,33 @@ const Presentation = () => {
         {WhyReactHooks()}
         {UseState()}
         {UseEffect()}
-        <Slide>
-          <Heading>Rules of Hooks</Heading>
+        <Slide textColor="white">
+          <Heading margin="-5rem auto auto auto">Rules of Hooks</Heading>
+          <List bulletStyle="greenCheck">
+            <Appear>
+              <ListItem>Hooks sólo al principio de la función.</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Hooks sólo dentro de componentes o de Custom Hooks
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <i>use</i> is for Hooks
+              </ListItem>
+            </Appear>
+          </List>
+          <Appear>
+            <Image src={rules} width="40rem" />
+          </Appear>
+          <Notes>
+            Hooks sólo al principio de la función. Nada de dentro de
+            condiciones, bucles o funciones internas. Eso permite mantener el
+            estado entre las diferentes llamadas. Hooks sólo dentro de
+            componentes o de Custom Hooks Poner el prefijo *use* en todas las
+            funciones que usen Hooks y no sean un componente
+          </Notes>
         </Slide>
         {UseRef()}
         {UseImperativeHandle()}

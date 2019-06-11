@@ -1,0 +1,13 @@
+useEffect(() => {
+    // Ejecuta después del render
+    return () => {} // Ejecuta cuando el componente se desmonta 
+}, [])
+
+
+useEffect(() => {
+    // Ejecuta después del render y cuando id cambia
+    return () => {} // Ejecuta después del render y antes de siguiente efecto
+}, [id])
+
+
+// Siempre de forma asíncrona, mientras que el componentDidMount y el componentDidUpdate lo hacen de forma síncrona

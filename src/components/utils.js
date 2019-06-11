@@ -1,3 +1,4 @@
+import React from "react";
 import { CodePane, Fill, Slide } from "spectacle";
 import styled from "styled-components";
 import withProps from "recompose/withProps";
@@ -41,4 +42,20 @@ export const RightCodeFill = styled(Fill)`
 export const CodeSandboxSlide = styled(Slide)`
   max-height: inherit !important;
   max-width: inherit !important;
+  iframe {
+    width: 93%;
+    height: 55rem;
+    border: 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 `;
+
+export const CodeSandboxIframe = props => (
+  <iframe
+    title="sample"
+    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media"
+    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+    {...props}
+  />
+);

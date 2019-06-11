@@ -13,3 +13,4 @@ export const reactNative = require("./react-native.png");
 export const reactConf = require("./reactconf.jpg");
 export const lolGuy = require("./lologuy.png");
 export const wrapperHell = require("./wrapper-hell.png");
+export const rules = require("./rules.jpg");
