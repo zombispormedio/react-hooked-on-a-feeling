@@ -6,7 +6,7 @@ class Greetings5 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "Alicante Frontend"
     };
     this.onChange = this.onChange.bind(this);
   }
@@ -35,7 +35,7 @@ class Greetings6 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      name: "Alicante Frontend",
       quote: ""
     };
     this.onChange = this.onChange.bind(this);
@@ -76,7 +76,7 @@ class Greetings7 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      name: "Alicante Frontend",
       quote: "",
       searchResult: []
     };
@@ -135,7 +135,7 @@ class Greetings8 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      name: "Alicante Frontend",
       quote: "",
       searchResult: [],
       windowWidth: window.innerWidth
