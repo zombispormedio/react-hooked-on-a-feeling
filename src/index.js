@@ -6,6 +6,8 @@ import { AppContainer } from "react-hot-loader";
 
 import Presentation from "./presentation";
 
+import "../node_modules/prismjs/themes/prism-tomorrow.css";
+
 const CustomErrorReporter = ({ error }) => <Redbox error={error} />;
 
 CustomErrorReporter.propTypes = {

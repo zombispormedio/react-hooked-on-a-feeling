@@ -207,10 +207,10 @@ class Greetings8 extends Component {
 export const FiveMinutes = {
   Styles: styled.div`
     color: white;
-    width: 35rem;
+    width: 32rem;
     height: 45rem;
     overflow-y: auto;
-    ${props => props.dense && "margin-top: -3rem !important;"}
+    ${props => props.dense && "transform: translateY(-3rem);"}
   `,
   Greetings1() {
     return (
