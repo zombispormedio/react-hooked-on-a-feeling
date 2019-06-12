@@ -14,3 +14,5 @@ export const reactConf = require("./reactconf.jpg");
 export const lolGuy = require("./lologuy.png");
 export const wrapperHell = require("./wrapper-hell.png");
 export const rules = require("./rules.jpg");
+export const malware = require("./malware.png");
+export const wiz = require("./wiz.jpg");

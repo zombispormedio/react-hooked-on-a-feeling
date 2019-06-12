@@ -9,7 +9,8 @@ import {
   List,
   ListItem,
   Appear,
-  Notes
+  Notes,
+  Link
 } from "spectacle";
 import { alicanteFrontendLogo, rules } from "./images";
 import { withProtection } from "./helpers";
@@ -119,6 +120,74 @@ const Presentation = () => {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+        </Slide>
+        <Slide bulletStyle="greenCheck">
+          <Text textColor="secondary">Referencias</Text>
+          <List bulletStyle="">
+            <ListItem>
+              <Link
+                href="https://www.youtube.com/watch?v=dpw9EHDh2bM"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                React Today and Tomorrow and 90% Cleaner React With Hooks
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                Making Sense of React Hooks
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://kentcdodds.com/blog/application-state-management-with-react"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                Application State Management with React
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://overreacted.io/a-complete-guide-to-useeffect/"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                A Complete Guide to useEffect
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://blog.risingstack.com/the-history-of-react-js-on-a-timeline/"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                The History of React.js on a Timeline
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://kentcdodds.com/blog/usememo-and-usecallback"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                When to useMemo and useCallback
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://es.reactjs.org/blog/2016/07/13/mixins-considered-harmful.html"
+                textColor="white"
+                style={{ textDecoration: "underline" }}
+              >
+                Mixins Considered Harmful
+              </Link>
+            </ListItem>
+          </List>
         </Slide>
       </Deck>
     </BaseStyles>
