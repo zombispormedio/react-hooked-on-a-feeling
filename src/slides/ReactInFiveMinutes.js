@@ -9,7 +9,6 @@ import {
 } from "../components";
 
 export function ReactInFiveMinutes() {
-  console.log(window.location.href.includes("presenter"));
   return [
     <Slide>
       <Heading>Pero antes...</Heading>

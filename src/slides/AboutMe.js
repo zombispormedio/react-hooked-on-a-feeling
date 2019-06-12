@@ -39,7 +39,6 @@ export function AboutMe() {
           margin="auto 0 auto 0"
         />
         <Link
-          textSize="x-large"
           margin="auto 0 auto 0"
           href="https://twitter.com/zombispormedio"
           textColor="white"
@@ -47,7 +46,7 @@ export function AboutMe() {
           @Zombispormedio
         </Link>
       </Row>
-      <Text textSize="xx-large" margin="2rem auto auto auto" textColor="white">
+      <Text margin="2rem auto auto auto" textColor="white">
         Full Stack Engineer en
       </Text>
       <Image src={companyImage} width="12rem" />
@@ -60,13 +59,10 @@ export function AboutMe() {
       </Notes>
     </Slide>,
     <Slide>
-      <Text textColor="white" textSize="x-large">
-        Me recordaréis de...
-      </Text>
+      <Text textColor="white">Me recordaréis de...</Text>
       <BlockQuote>
         <Quote
           textColor="secondary"
-          textSize="3rem"
           style={{ borderLeft: `1px solid ${colors.secondary}` }}
         >
           Esto es un Bulbasaur
@@ -80,12 +76,9 @@ export function AboutMe() {
       </Notes>
     </Slide>,
     <Slide>
-      <Text textSize="x-large" textColor="white">
-        Me recordaréis de...
-      </Text>
+      <Text textColor="white">Me recordaréis de...</Text>
       <BlockQuote>
         <Quote
-          textSize="3rem"
           textColor="secondary"
           style={{ borderLeft: `1px solid ${colors.secondary}` }}
         >
