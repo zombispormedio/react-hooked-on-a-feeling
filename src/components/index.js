@@ -5,3 +5,4 @@ export * from "./Activity";
 export * from "./Effect";
 export * from "./FiveMinutes";
 export * from "./utils";
+export * from "./Goo";

@@ -1,0 +1,37 @@
+function App() {
+  return (
+    <ThemeProvider>
+      <AuthenticationProvider>
+        <Router>
+          <Home path="/" />
+          <About path="/about" />
+          <UserPage path="/:userId" />
+          <UserSettings path="/settings" />
+          <Notifications path="/notifications" />
+        </Router>
+      </AuthenticationProvider>
+    </ThemeProvider>
+  )
+}
+function Notifications() {
+  return (
+    <NotificationsProvider>
+      <NotificationsTab />
+      <NotificationsTypeList />
+      <NotificationsList />
+    </NotificationsProvider>
+  )
+}
+function UserPage({username}) {
+  return (
+    <UserProvider username={username}>
+      <UserInfo />
+      <UserNav />
+      <UserActivity />
+    </UserProvider>
+  )
+}
+function UserSettings() {
+  // this would be the associated hook for the AuthenticationProvider
+  const {user} = useAuthenticatedUser()
+}

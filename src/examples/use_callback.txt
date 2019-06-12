@@ -1,0 +1,5 @@
+const callback = useCallback(() => {},  [something])
+
+const MemoPainter = React.memo(Painter);
+
+<MemoPainter callback={callback} />

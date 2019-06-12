@@ -1,21 +1,17 @@
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 window.SpeechRecognition =
   window.webkitSpeechRecognition || window.SpeechRecognition;
 
-export const useSpeechRecognition = ({ lang }) => {
+export const useSpeechRecognition = () => {
   const [transcript, setTranscript] = useState();
   const [recognizing, setRecognizing] = useState(false);
   const [error, setError] = useState();
   const recognitionRef = useRef();
 
-  const talk = useCallback(() => {
-    recognitionRef.current.start();
-  }, [recognitionRef]);
-
   useEffect(() => {
     const recognition = new window.SpeechRecognition();
-    recognition.lang = lang;
+    recognition.lang = "es-ES";
     recognition.onresult = event => {
       const last = event.results.length - 1;
       setTranscript(event.results[last][0].transcript);
@@ -29,7 +25,10 @@ export const useSpeechRecognition = ({ lang }) => {
 
   return {
     error,
-    talk,
+    start: () => {
+      setTranscript("");
+      recognitionRef.current.start();
+    },
     recognizing,
     transcript
   };

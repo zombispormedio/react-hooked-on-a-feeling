@@ -4,15 +4,18 @@ import { Slide, Heading, Text } from "spectacle";
 export function FAQ() {
   return [
     <Slide>
+      <Heading>¿Preguntas?</Heading>
+    </Slide>,
+    <Slide>
       <Heading>¿Lo migro todo ya?</Heading>
-      <Text>
+      <Text textColor="secondary">
         No es necesario que migres, todavía hay soporte para las clases y lo
         seguirá habiendo.
       </Text>
     </Slide>,
     <Slide>
       <Heading>No me enteré de nada</Heading>
-      <Text>
+      <Text textColor="secondary">
         <span role="img" aria-labelledBy="woman">
           🤷🏻‍♀
         </span>

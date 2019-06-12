@@ -16,6 +16,7 @@
     "raw-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-spring": "^6.1.0",
     "react-twitter-embed": "^2.0.8",
     "recompose": "^0.30.0",
     "spectacle": "^5.5.0",

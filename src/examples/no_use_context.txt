@@ -1,0 +1,15 @@
+const GeneralButton = () => (
+<TranslationsContext.Consumer>
+	{
+		t => (
+			<ThemeContext.Consumer>
+	    {theme => (
+	      <Button primaryColor={theme.primaryColor}>
+	        {t("buttons.simple")}
+	      </Button>
+	    )}
+		  </ThemeContext.Consumer>
+		)
+	}
+</TranslationsContext.Consumer>
+);

@@ -1,0 +1,10 @@
+const GeneralButton = () => {
+	const t = useContext(TranslationsContext)
+	const theme = useContext(ThemeContext)
+
+	return (
+		<Button primaryColor={theme.primaryColor}>
+	      {t("buttons.simple")}
+	  </Button>
+	)
+};

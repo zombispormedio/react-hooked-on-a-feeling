@@ -1,0 +1,16 @@
+const ThemeContext = React.createContext({});
+const App = props => (
+  <ThemeContext.Provider value={{ primaryColor: green }}>
+    {props.children}
+  </ThemeContext.Provider>
+);
+
+const ThemedButton = () => (
+  <ThemeContext.Consumer>
+    {value => (
+      <Button primaryColor={{ value.primaryColor }}>
+        I'm button using context!
+      </Button>
+    )}
+  </ThemeContext.Consumer>
+);
