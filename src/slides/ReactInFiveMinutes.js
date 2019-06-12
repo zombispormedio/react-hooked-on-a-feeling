@@ -9,7 +9,7 @@ import {
 } from "../components";
 
 export function ReactInFiveMinutes() {
-  console.log(window.location.hash.includes("presenter"));
+  console.log(window.location.href.includes("presenter"));
   return [
     <Slide>
       <Heading>Pero antes...</Heading>
@@ -19,12 +19,10 @@ export function ReactInFiveMinutes() {
     </Slide>,
     <Slide transition={["zoom"]}>
       <Image src={lolGuy} />
-      {!window.location.hash.includes("presenter") && (
-        <audio autoPlay>
-          <source src="1minute.mp3" type="audio/mpeg" />
-          <track kind="captions" />
-        </audio>
-      )}
+      <audio autoPlay>
+        <source src="1minute.mp3" type="audio/mpeg" />
+        <track kind="captions" />
+      </audio>
     </Slide>,
     <Slide>
       <Layout>
