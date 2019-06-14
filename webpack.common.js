@@ -83,7 +83,7 @@ module.exports = {
       inject: false,
       appMountId: "root",
       template: HtmlWebpackTemplate,
-      title: "React Hooked On A Feeling"
+      title: "React Hooked on a Feeling"
     }),
     new CopyPlugin([{ from: "static" }])
   ]
