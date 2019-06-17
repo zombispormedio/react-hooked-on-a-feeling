@@ -59,6 +59,6 @@
 
     If you believe you have found a virus on a Wix site please report it to: [security-report@wix.com](mailto:security-report@wix.com).
 
-    ![](Captura_de_pantalla_2019-06-09_a_las_20-3af79699-57f1-46a2-bbf1-09cd7b052d2c.31.22.png)
+    ![](images/malware-wix.png)
 
     ![](https://media.giphy.com/media/fJKG1UTK7k64w/giphy.gif)

@@ -10,7 +10,7 @@
 
     Evitar el Wrapper Hell
 
-    ![](Untitled-727ab843-8be3-40f5-9600-9951ba220356.png)
+    ![](images/wrapper-hell.png)
 
     - It's hard to reuse stateful login between components.
 
@@ -160,13 +160,11 @@
         
         module.exports = CommentList;
 
-    [https://www.notion.so/zombispormedio/Referencias-faba48bb7c79480782d4ceb8b1e717f9#afcc86f9777d473bbd66434080fe5bf4](https://www.notion.so/zombispormedio/Referencias-faba48bb7c79480782d4ceb8b1e717f9#afcc86f9777d473bbd66434080fe5bf4) 
-
     Colisionan los métodos, pierdes la trazabilidad del método. Diamond Problem
 
-    ![](Captura_de_pantalla_2019-06-09_a_las_17-355150b5-2639-4a99-9963-af2e4fbdbe49.13.20.png)
+    ![](images/diamond-problem1.png)
 
-    ![](Captura_de_pantalla_2019-06-09_a_las_17-6d414ba2-2896-4fc3-b74f-575889231175.13.32.png)
+    ![](images/diamond-problem2.png)
 
 5. Las funciones se minifican mejor. El nombre de una propiedad de una clases tiene que ser siempre el mismo, pero como por ejemplo para el array que devuelve el useState, no importa como se llame. Además, el equipo de React está trabajando en formas de optimizar el transpilado y la minificación, están experimentando con un optimizador llamado Prepack, y las clases han dado serios problemas.
 6. ¿Breaking changes?

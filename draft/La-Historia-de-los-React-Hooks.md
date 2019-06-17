@@ -62,8 +62,6 @@
           }
         });
 
-    ![](Untitled-7e0ad1f6-4c87-4e36-a3b4-72b811269ea7.png)
-
 - 2013
     - Lionel Messi gana su cuarto balón de oro.
 
@@ -75,7 +73,7 @@
 
     A tomar por culo el MVC, MVVM, two directional data-binding. 
 
-    ![](Captura_de_pantalla_2019-06-09_a_las_12-97245f01-5ec0-4b61-8691-53c40a09bafc.50.01.png)
+    ![](images/jordan-walke.png)
 
     One Directional data binding (el por qué de esto se queda fuera de la charla), JSX (html in js). Más reconciliación y menos mutación. 
 
