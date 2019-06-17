@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.71f010f57885d2bffbb1d42cb69bd73a.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.ade1084e0f7b7bb9e70dfd3628ac99fe.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.1207f4c03f93fa3ccae00cdbdbd847c7.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.58db5ed7b5b0e48a39dd29e62e55ed5c.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.014f471feb2e12ffbb4ed8631d448d18.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.4af52108f95053ca9feb7b69f0251cba.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Effective Wombat",
+  "short_name": "Effective Wombat",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "My secret talk",
+  "background_color": "#ffffff"
+}
