@@ -11,7 +11,7 @@
     "date-fns": "^2.0.0-alpha.27",
     "dotenv": "^8.0.0",
     "nanoid": "^2.0.3",
-    "prismjs": "^1.16.0",
+    "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^3.0.0",
     "react": "^16.8.6",
